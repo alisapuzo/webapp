@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block HEADER %}
+<h2>{% block TITLE %}Todos{% endblock %}</h2>
+{% endblock %}
+
+{% block CONTENT %}
+
+<form action="{{ url_for('todos') }}" method="post">
+    {{ form.csrf_token }}
+    {{ form.description }}
+    {{ form.submit }}
+</form>
+
+<ul>
+{% for todo in todos %}
+    <li>{{ todo.description }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
