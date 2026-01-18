@@ -1,13 +1,19 @@
-<html>
-    <head>
-    </head>
-    <body>
-    <nav>
-        <h1>To-Do App</h1>
-        <a href="">Lists</a>
-    </nav>
-    <section>
-        {% block CONTENT %} {%endblock%} 
-    </section>
-    </body>
+<!doctype html>
+<html lang=en>
+
+<head>
+    <title>{% block TITLE %}{% endblock %} - To-Do App</title>
+</head>
+
+<body>
+<nav>
+    <h1>To-Do App</h1>
+    <a href="{{ url_for('lists') }}">Lists</a>
+</nav>
+<section class="content">
+    <header>{% block HEADER %}{% endblock %}</header>
+    {% block CONTENT %}{% endblock %}
+</section>
+</body>
+
 </html>
