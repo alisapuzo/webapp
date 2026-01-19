@@ -6,10 +6,11 @@
 
 {% block CONTENT %}
 
-<form action="{{ url_for('todos') }}" method="post">
+<form action="{{ url_for('todos') }}" method="post"
+    class="row row-cols-auto g-2 pt-3">
     {{ form.csrf_token }}
-    {{ form.description }}
-    {{ form.submit }}
+    <div class="col">{{ form.description(class='form-control') }}</div>
+    <div class="col">{{ form.submit(class='btn btn-primary') }}</div>
 </form>
 
 <ul>
